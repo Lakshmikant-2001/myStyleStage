@@ -15,16 +15,17 @@ body a {
 }
 
 body {
-    background-color: #000;
-    color: #fff;
     font-family: 'MuseoModerno', cursive;
 }
 
 .skip-link{
     position: absolute;
+    color:#fff;
 }
 
 header{
+    background-color: #000;
+    color: #fff;
     display: flex;
     min-height: 100vh;
     justify-content: center;
@@ -51,3 +52,21 @@ header > .container path{
     fill:white;
 }
 
+/* --scroll bar start-- */
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #333;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius:px;
+    background-color: #ff0000;
+    background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+
+/* --scroll bar end-- */
