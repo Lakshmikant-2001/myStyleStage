@@ -172,6 +172,38 @@ header>.container>a:hover path {
     stroke:#fff;
     stroke-width: 3px;
 }
+
+/* --nav bar start-- */
+nav{
+    font-family: 'Bangers', cursive;
+    background-color: #000;
+    color:white;
+    width: 80vh;
+    position: sticky;
+    top:0%;
+    left:0%;
+    font-size:1.5rem;
+    padding:1rem;
+    transform: rotate(.25turn) translate(50%,640%);
+}
+
+nav ul{
+    display:flex;
+    justify-content: space-around;
+}
+
+nav ul li{
+    list-style:none;
+}
+
+nav a{
+    
+}
+/* --nav bar end-- */
+
+main{
+    margin-left:100px;
+}
 /* --scroll bar start-- */
 
 ::-webkit-scrollbar {
