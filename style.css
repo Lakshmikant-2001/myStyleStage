@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-*,
-*::after,
-*::before{
-    padding:0;
-    margin:0;
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -16,14 +14,16 @@ body a {
 
 body {
     font-family: 'MuseoModerno', cursive;
+    overflow-x: hidden;
 }
 
-.skip-link{
+.skip-link {
     position: absolute;
-    color:#fff;
+    color: #fff;
+    display: none;
 }
 
-header{
+header {
     background-color: #000;
     color: #fff;
     display: flex;
@@ -32,41 +32,60 @@ header{
     align-items: center;
 }
 
-header > .container{
+header::after, header::before {
+    content: '';
+    position: absolute;
+    right: -45%;
+    width: 100vh;
+    height: 100vh;
+    transform: rotate(.87turn);
+    border-radius: 1rem;
+    background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+    overflow-y: hidden;
 }
 
-header > .container h1{
-    font-size:10rem;
+header::before {
+    left: -45%;
+    transform: rotate(.87turn);
+}
+
+header>.container {
+    z-index: 3;
+}
+
+header>.container h1 {
+    font-size: 10rem;
     font-family: 'Bangers', cursive;
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #e2d5dc;
     -webkit-text-stroke: 15px transparent;
     margin-bottom: 5rem;
+    text-shadow: 2px 2px 5px #333;
 }
-header > .container svg{
+
+header>.container svg {
     width: 20px;
 }
 
-header > .container path{
-    fill:white;
+header>.container path {
+    fill: white;
 }
 
 /* --scroll bar start-- */
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 12px;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background-color: #333;
 }
 
-::-webkit-scrollbar-thumb{
-    border-radius:px;
-    background-color: #ff0000;
+::-webkit-scrollbar-thumb {
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
 }
-::-webkit-scrollbar-thumb:hover{
-    background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
 
-/* --scroll bar end-- */
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+    /* --scroll bar end-- */
