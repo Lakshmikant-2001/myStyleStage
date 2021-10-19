@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
 *, *::after, *::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body a {
@@ -20,7 +20,7 @@ body {
 .skip-link {
     position: absolute;
     color: #fff;
-    display: none;
+    /* display: none; */
 }
 
 header {
@@ -50,25 +50,75 @@ header::before {
 }
 
 header>.container {
-    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 header>.container h1 {
+    width: 100%;
+    text-align: center;
     font-size: 10rem;
     font-family: 'Bangers', cursive;
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #e2d5dc;
     -webkit-text-stroke: 15px transparent;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     text-shadow: 2px 2px 5px #333;
 }
 
-header>.container svg {
-    width: 20px;
+header>.container h2 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: .5rem;
+    text-align: center;
+    width: 65%;
+    text-shadow: 2px 5px 20px #ffffff99;
+    /* animation: glow 2s infinite linear; */
+    margin-bottom: 3rem;
 }
 
-header>.container path {
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 2px 5px 20px #ffffff99;
+        letter-spacing: .5rem;
+    }
+    35% {
+        text-shadow: 4px 5px 50px #ffffff;
+        letter-spacing: .6rem;
+    }
+    75% {
+        letter-spacing: .4rem;
+    }
+}
+
+header>.container p {
+    padding: 0.5rem 1rem;
+    border-left: 5px solid #f282d9;
+}
+
+header>.container p  a {
+    color:#f282d9;
+    font-weight: bold;
+}
+
+header>.container > a {
+    margin-top:3rem;
+    box-shadow: 3px 2px 2px #f282d9,-2px -3px 10px #f282d9;
+    padding:.5rem 1rem;
+    border-radius: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+header>.container a svg {
+    width: 20px;
+    margin-right: .5rem;
+}
+
+header>.container a path {
     fill: white;
 }
 
