@@ -35,19 +35,44 @@ header {
 header::after, header::before {
     content: '';
     position: absolute;
-    right: -45%;
+    /* right: -45%; */
     width: 100vh;
     height: 100vh;
-    transform: rotate(.87turn);
+    /* transform: rotate(.87turn); */
     border-radius: 1rem;
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
     overflow-y: hidden;
+    animation:open-aft 1.2s 1 forwards ease-in-out;
 }
 
 header::before {
-    left: -45%;
-    transform: rotate(.87turn);
+    /* left: -45%; */
+    animation:open-bef 1.2s 1 forwards ease-in-out;
 }
+
+
+@keyframes open-aft {
+0% {
+    right:5%;
+    transform: scale(.75);
+}
+100% {
+    right: -45%;
+    transform: rotate(.87turn) scale(1);
+}
+}
+
+@keyframes open-bef {
+0% {
+    left:5%;
+    transform: scale(.75);
+}
+100% {
+    left: -45%;
+    transform: rotate(.87turn) scale(1);
+}
+}
+
 
 header>.container {
     display: flex;
@@ -55,6 +80,17 @@ header>.container {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+    animation: show .5s .5s 1 forwards ease-in-out;
+    transform: scale(0);
+}
+
+@keyframes show {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 header>.container h1 {
