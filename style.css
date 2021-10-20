@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
 *, *::after, *::before {
     padding: 0;
     margin: 0;
@@ -13,9 +14,28 @@ body a {
 }
 
 body {
-    font-family: 'MuseoModerno', cursive;
+    font-family: 'Merienda One', cursive;
     overflow-x: hidden;
 }
+
+/* --scroll bar start-- */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+}
+    /* --scroll bar end-- */
 
 .skip-link {
     position: absolute;
@@ -176,24 +196,41 @@ header>.container>a:hover path {
 /* --nav bar start-- */
 nav{
     font-family: 'Bangers', cursive;
-    background-color: #000;
-    color:white;
+    background-color: #fff;
+    box-shadow: 5px -8px 20px #00000070;
+    color: #888;
     width: 80vh;
     position: sticky;
     top:0%;
-    left:0%;
+    left:100%;
     font-size:1.5rem;
-    padding:1rem;
-    transform: rotate(.25turn) translate(50%,640%);
+    transform: rotate(.75turn) translate(-60%,640%);
+    /* display:none; */
+    z-index: 1;
 }
 
 nav ul{
     display:flex;
     justify-content: space-around;
+    height: 100%;
+    width: 100%;
 }
 
 nav ul li{
     list-style:none;
+    flex-grow: 1;
+    padding:1rem;
+}
+
+nav ul li:not(:last-child){
+    border-right: 4px solid #f282d9;
+}
+
+nav ul li:hover{
+    box-shadow:3px -2px 30px #00000090;
+}
+nav ul li:hover:not(:last-child){
+        border-right: 4px solid #f282d9;
 }
 
 nav a{
@@ -202,22 +239,8 @@ nav a{
 /* --nav bar end-- */
 
 main{
-    margin-left:100px;
-}
-/* --scroll bar start-- */
-
-::-webkit-scrollbar {
-    width: 12px;
+    padding:5rem 7rem;
+    width: 100%;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #333;
-}
 
-::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
-    /* --scroll bar end-- */
