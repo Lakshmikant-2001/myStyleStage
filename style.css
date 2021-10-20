@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
 *, *::after, *::before {
     padding: 0;
     margin: 0;
@@ -12,11 +12,16 @@ body a {
     text-decoration: none;
 }
 
+body a:hover{
+    text-decoration: underline dashed;
+}
 body {
-    font-family: Verdana, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     overflow-x: hidden;
     background-color: #000;
-    color:#ddd;
+    color: #ddd;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 /* --scroll bar start-- */
@@ -36,7 +41,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
 }
-    /* --scroll bar end-- */
+
+/* --scroll bar end-- */
 
 .skip-link {
     position: absolute;
@@ -184,126 +190,134 @@ header>.container a svg {
 
 header>.container a path {
     fill: #f282d9;
-    stroke:#fff;
+    stroke: #fff;
     stroke-width: 0;
     transition: stroke-width .5s ease-in-out;
 }
 
 header>.container>a:hover path {
-    stroke:#fff;
+    stroke: #fff;
     stroke-width: 3px;
 }
 
 /* --nav bar start-- */
-nav{
+
+nav {
     font-family: 'Bangers', cursive;
     background-color: #111;
     box-shadow: 0px -1px 20px #f282d990;
     color: #fff;
     width: 80vh;
     position: sticky;
-    top:0%;
-    left:100%;
-    font-size:1.5rem;
-    transform: rotate(.75turn) translate(-60%,640%);
+    top: 0%;
+    left: 100%;
+    font-size: 1.5rem;
+    transform: rotate(.75turn) translate(-60%, 640%);
     /* display:none; */
     z-index: 1;
 }
 
-nav ul{
-    display:flex;
+nav ul {
+    display: flex;
     justify-content: space-around;
     height: 100%;
     width: 100%;
 }
 
-nav ul li{
-    list-style:none;
+nav ul li {
+    list-style: none;
     flex-grow: 1;
-    padding:1rem;
+    padding: 1rem;
 }
 
-nav ul li:not(:last-child){
+nav ul li:not(:last-child) {
     border-right: 4px solid #ff60b5;
 }
 
-nav ul li:hover{
-    box-shadow:3px -2px 30px #00000090;
-}
-nav ul li:hover:not(:last-child){
-        border-right: 4px solid #ff60b5;
+nav ul li:hover {
+    box-shadow: 2px -5px 20px #f282d990;
 }
 
-nav a{
-    
-}
+nav a {}
+
 /* --nav bar end-- */
 
-main{
+main {
     width: 80%;
-    margin:auto;
-    font-family: Verdana, sans-serif;
+    margin: auto;
     line-height: 3rem;
     position: relative;
-    font-size:1.5rem;
 }
 
-main h2{
-    padding-left:.5rem;
-    font-size:3.5rem;
-    font-family: 'Bangers',cursive;
+main h2 {
+    padding-left: .5rem;
+    font-size: 3.5rem;
+    font-family: 'Bangers', cursive;
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #e2d5dc;
     -webkit-text-stroke: 5px transparent;
     text-shadow: 2px 2px 5px #333;
-    margin:2rem 0;
+    margin: 2rem 0;
     position: relative;
-    padding:.3rem 1.1rem;
-    border-left:7px solid #ff3886;
-    cursor:default;
-    transition:transform .5s linear, letter-spacing .5s linear;
+    padding: .3rem 1.1rem;
+    border-left: 7px solid #ff3886;
+    cursor: default;
+    transition: transform .5s linear, letter-spacing .5s linear;
 }
 
-main h2:hover{
-    transform:rotate(1deg);
+main h2:hover {
+    transform: rotate(1deg);
     letter-spacing: .5rem;
 }
 
-main h2::after{
-    content:'';
+main h2::after {
+    content: '';
     height: 16px;
     width: 16px;
     background-color: #ff3886;
     position: absolute;
-    top:0;
-    left:-1%;
-    animation:rot 1s infinite linear;
+    top: 0;
+    left: -1%;
+    animation: rot 1s infinite linear;
 }
 
-#about .container{
-    margin:5rem 0;
+main a {
+    color: #f282d9;
 }
 
-#about .container blockquote{
-   width:600px;
-   margin:4rem 0;
-   box-shadow: 3px 3px 10px #ffffff50;
+#about .container {
+    margin: 5rem 0;
 }
 
-#about .container blockquote strong{
-    padding:.5rem 2rem .5rem 1rem;
+#about .container blockquote {
+    width: 600px;
+    margin: 4rem 0;
+    box-shadow: 3px 3px 10px #ffffff50;
+}
+
+#about .container blockquote strong {
+    padding: .5rem 2rem .5rem 1rem;
     margin-bottom: 1rem;
     display: block;
-    border-bottom:5px solid #ff3886;
+    border-bottom: 5px solid #ff3886;
     font-family: "Bangers";
-    color:#888;
+    color: #888;
     letter-spacing: .2rem;
-    font-size:2rem;
+    font-size: 2rem;
+    animation: glo 3s infinite ease-in-out;
 }
 
-#about .container blockquote p{
-    padding:1rem;
+@keyframes glo {
+    0%, 100% {
+        color: #888;
+    }
+    50% {
+        color: #bbb;
+        text-shadow: 1px 1px 10px #888;
+    }
 }
 
-
+#about .container blockquote p {
+    padding: 1rem;
+}
