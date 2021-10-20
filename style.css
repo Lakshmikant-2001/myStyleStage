@@ -15,6 +15,7 @@ body a {
 body a:hover{
     text-decoration: underline dashed;
 }
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     overflow-x: hidden;
@@ -74,7 +75,6 @@ header::after, header::before {
 }
 
 header::before {
-    /* left: -45%; */
     animation: open-bef 1.2s 1 forwards ease-in-out;
 }
 
@@ -141,10 +141,10 @@ header>.container h2 {
 }
 
 header>.container h2:hover {
-    animation: glow 2s infinite linear;
+    animation: expand 2s infinite linear;
 }
 
-@keyframes glow {
+@keyframes expand {
     0%, 100% {
         text-shadow: 2px 5px 20px #ffffff99;
         letter-spacing: .5rem;
@@ -181,6 +181,7 @@ header>.container>a {
 
 header>.container>a:hover {
     transform: scale(1.03);
+    text-decoration: unset;
 }
 
 header>.container a svg {
@@ -190,15 +191,8 @@ header>.container a svg {
 
 header>.container a path {
     fill: #f282d9;
-    stroke: #fff;
-    stroke-width: 0;
-    transition: stroke-width .5s ease-in-out;
 }
 
-header>.container>a:hover path {
-    stroke: #fff;
-    stroke-width: 3px;
-}
 
 /* --nav bar start-- */
 
@@ -213,7 +207,6 @@ nav {
     left: 100%;
     font-size: 1.5rem;
     transform: rotate(.75turn) translate(-60%, 640%);
-    /* display:none; */
     z-index: 1;
 }
 
@@ -305,10 +298,10 @@ main a {
     color: #888;
     letter-spacing: .2rem;
     font-size: 2rem;
-    animation: glo 3s infinite ease-in-out;
+    animation: glow 3s infinite ease-in-out;
 }
 
-@keyframes glo {
+@keyframes glow {
     0%, 100% {
         color: #888;
     }
