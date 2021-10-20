@@ -243,4 +243,36 @@ main{
     width: 100%;
 }
 
+main h2{
+    padding-left:.5rem;
+    font-size:3.5rem;
+    font-family: 'Bangers',cursive;
+    background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #e2d5dc;
+    -webkit-text-stroke: 5px transparent;
+    text-shadow: 2px 2px 5px #333;
+    margin:2rem 0;
+    position: relative;
+    padding:.3rem 1.1rem;
+    border-left:7px solid #ff3886;
+    cursor:default;
+    transition:transform .5s linear, letter-spacing .5s linear;
+}
+
+main h2:hover{
+    transform:rotate(1deg);
+    letter-spacing: .5rem;
+}
+
+main h2::after{
+    content:'';
+    height: 16px;
+    width: 16px;
+    background-color: #ff3886;
+    position: absolute;
+    top:0;
+    left:-1%;
+    animation:rot 1s infinite linear;
+}
 
