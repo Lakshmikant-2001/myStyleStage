@@ -12,6 +12,10 @@ body a {
     text-decoration: none;
 }
 
+body li{
+    list-style: none;
+}
+
 body a:hover{
     text-decoration: underline dashed;
 }
@@ -218,7 +222,6 @@ nav ul {
 }
 
 nav ul li {
-    list-style: none;
     flex-grow: 1;
     padding: 1rem;
 }
@@ -231,7 +234,9 @@ nav ul li:hover {
     box-shadow: 2px -5px 20px #f282d990;
 }
 
-nav a {}
+nav a:hover{
+    text-decoration: unset;
+}
 
 /* --nav bar end-- */
 
@@ -279,11 +284,15 @@ main a {
     color: #f282d9;
 }
 
-#about .container {
+main p{
+    margin-bottom: 2rem;
+}
+
+main .container {
     margin: 5rem 0;
 }
 
-#about .container blockquote {
+#about .container blockquote{
     width: 600px;
     margin: 4rem 0;
     box-shadow: 3px 3px 10px #ffffff50;
@@ -313,4 +322,30 @@ main a {
 
 #about .container blockquote p {
     padding: 1rem;
+}
+
+#about :last-child{
+    margin-bottom: 5rem;
+}
+
+#about :last-child ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    margin:2rem 0 5rem;
+}
+
+#about :last-child li{
+    border:3px solid #ff60b5;
+    margin:1rem 0.7rem;
+    padding:.5rem 1.2rem;
+    border-radius: 1rem 0 1rem 0;
+    cursor: default;
+    transition:all .2s linear;
+}
+
+#about :last-child li:hover{
+    box-shadow: 2px 3px 5px #ff60b5;
+    text-shadow: 1px 1px 10px #fff;
 }
