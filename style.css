@@ -248,7 +248,7 @@ main {
     position: relative;
 }
 
-main h2 {
+main h2 ,#styles .container h2{
     padding-left: .5rem;
     font-size: 3.5rem;
     font-family: 'Bangers', cursive;
@@ -265,19 +265,19 @@ main h2 {
     transition: transform .5s linear, letter-spacing .5s linear;
 }
 
-main h2:hover {
+main h2:hover,#styles .container h2:hover {
     transform: rotate(1deg);
     letter-spacing: .5rem;
 }
 
-main h2::after {
+main h2::after,#styles .container h2:after {
     content: '';
-    height: 16px;
-    width: 16px;
+    height: 8px;
+    width: 8px;
     background-color: #ff3886;
     position: absolute;
     top: 0;
-    left: -1%;
+    left: -0%;
     animation: rot 1s infinite linear;
 }
 
@@ -376,15 +376,17 @@ main .container {
 }
 
 #contribute :nth-child(2) h3 {
+    display: inline;
     text-transform: uppercase;
     border-left: 5px solid #ff60b5;
-    padding: .5rem 1.2rem;
+    box-shadow: -3px 4px 7px #ffffff50;
+    padding: 1rem 1.2rem;
     font-size: 2rem;
     border-radius: .5rem;
 }
 
 #contribute ol {
-    margin: 1rem 4rem;
+    margin: 3rem 4rem;
 }
 
 #contribute li::before {
@@ -417,7 +419,7 @@ main .container {
     margin: 0 2rem 4rem;
 }
 
-.profile .container {
+.profile .container,#styles li {
     margin: 10rem auto;
     width: 500px;
     display: flex;
@@ -428,7 +430,7 @@ main .container {
     position: relative;
 }
 
-.profile .container::before, .profile .container::after {
+.profile .container::before, .profile .container::after,#styles li::after,#styles li::before {
     content: '';
     width: 50px;
     height: 50px;
@@ -442,7 +444,7 @@ main .container {
     border-radius: 50%;
 }
 
-.profile .container::after {
+.profile .container::after ,#styles li::after{
     background-color: #fff;
     border: unset;
     transform: scale(.5);
@@ -478,3 +480,35 @@ main .container {
 .profile .container a {
     color: #f282d9;
 }
+
+#styles .container {
+    width: 80%;
+    margin:auto;
+}
+
+#styles .features{
+    display:flex;
+    justify-content: space-around;
+}
+
+#styles li{
+    margin:4rem 0 30rem;
+    width: 350px;
+    height: 200px;
+    border-radius: 1rem 0 1rem 0;
+}
+
+#styles li > span{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem 0 1rem 0;
+}
+
+#styles li>span a{
+    color:#f282d9;
+    margin-bottom: 2rem;
+}
+
