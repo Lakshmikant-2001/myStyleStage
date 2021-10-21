@@ -338,19 +338,19 @@ main .container {
     margin:2rem 0 5rem;
 }
 
-#about :last-child li{
+#about :last-child li,.link-guidelines,#files a{
     border:3px solid #ff60b5;
     margin:1rem 0.7rem;
     padding:.5rem 1.2rem;
     border-radius: 1rem 0 1rem 0;
     cursor: default;
-    transition:all .2s linear;
+    transition:all .3s linear;
 }
 
-#about :last-child li:hover{
+#about :last-child li:hover,.link-guidelines:hover,#files a:hover{
     border-radius:2rem 0 1rem 0;
     box-shadow: 5px 4px 1px #ff60b5;
-    text-shadow: 1px 1px 10px #fff;
+    text-shadow: 1px 1px 10px #ddd;
 }
 
 #guidelines h3{
@@ -369,14 +369,51 @@ main .container {
 
 .link-guidelines{
     padding:1rem;
-    border:3px solid #ff60b5;
-    border-radius: 10px;
     color:#ddd;
-    font-weight: bolder;
-    transition:all .3s linear;
 }
 
 .link-guidelines:hover{
-    color:#f282d9;
     text-decoration:unset;
+}
+
+#contribute :nth-child(2) h3{
+    text-transform: uppercase;
+    border-left: 5px solid #ff60b5;
+    padding:.5rem 1.2rem;
+    font-size:2rem;
+    border-radius: .5rem;
+}
+
+#contribute ol{
+    margin:1rem 4rem;
+}
+
+#contribute  li::before{
+    content:'\2B16';
+    color:#ff60b5;
+    margin-right: 1rem;
+    transform: rotate(3deg);
+}
+
+#files .container{
+    width: 100%;
+   text-align: center;
+}
+
+#files .container h3{
+    text-transform: uppercase;
+    margin-bottom:5rem;
+}
+
+#files .container h3::before{
+    content: '\1F5C1';
+    color:#ff60b5;
+    margin-right: 1rem;
+}
+
+#files a{
+    color:#ddd;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    margin:0 2rem;
 }
