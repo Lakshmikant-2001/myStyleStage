@@ -203,8 +203,8 @@ header>.container a path {
 nav {
     font-family: 'Bangers', cursive;
     background-color: #111;
-    box-shadow: 0px -1px 20px #f282d990;
-    color: #fff;
+    box-shadow: 0px -8px 20px #f282d990;
+    color: #ddd;
     width: 80vh;
     position: sticky;
     top: 0%;
@@ -224,6 +224,7 @@ nav ul {
 nav ul li {
     flex-grow: 1;
     padding: 1rem;
+    transition:all .2s linear;
 }
 
 nav ul li:not(:last-child) {
@@ -231,7 +232,8 @@ nav ul li:not(:last-child) {
 }
 
 nav ul li:hover {
-    box-shadow: 2px -5px 20px #f282d990;
+    box-shadow: 0px -5px 10px #f282d9;
+    padding:1rem 2rem;
 }
 
 nav a:hover{
@@ -346,7 +348,8 @@ main .container {
 }
 
 #about :last-child li:hover{
-    box-shadow: 2px 3px 5px #ff60b5;
+    border-radius:2rem 0 1rem 0;
+    box-shadow: 5px 4px 1px #ff60b5;
     text-shadow: 1px 1px 10px #fff;
 }
 
