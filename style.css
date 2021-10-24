@@ -47,6 +47,14 @@ body {
     background-image: linear-gradient(to left bottom, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
 }
 
+::selection{
+    background-color: #ff60b5;
+}  
+
+a::selection{
+    color:#dddddd99;
+}
+
 /* --scroll bar end-- */
 
 .skip-link {
@@ -209,7 +217,7 @@ nav {
     top: 0%;
     left: 100%;
     font-size: 1.5rem;
-    transform: rotate(.75turn) translate(-60%, 640%);
+    transform: rotate(.75turn) translate(-60%, 360px );
     z-index: 1;
 }
 
@@ -331,7 +339,7 @@ main .container {
 
 #about :last-child ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     margin: 2rem 0 5rem;
@@ -487,6 +495,7 @@ main .container {
 #styles .features {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #styles .container {
@@ -518,14 +527,16 @@ main .container {
 .link-allstyles {
     margin: 3rem auto;
     padding: 1rem 1.5rem;
+    border-left:6px solid #ff60b5;
+    border-radius:.6rem;
     box-shadow: 3px 3px 10px #ffffff50, 2px 3px 10px #ff60b550;
     transition:all .3s linear;
 }
 
 .link-allstyles:hover {
     text-decoration: none;
-    transform: scale(1.1);
-    box-shadow: 3px 3px 10px #ffffff50, 2px 3px 20px #ff60b590;
+    transform: scale(1.05);
+    box-shadow: 3px 3px 5px #ffffff50, 2px 3px 20px #ff60b590;
 }
 
 .page-footer {
@@ -561,15 +572,16 @@ main .container {
 .page-footer ul{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 2rem 0 4rem;
 }
 
 .page-footer li{
-    flex-grow: 1;
     margin:2rem 2rem;
     padding:.5rem 3rem;
     border:3px solid #f282d9;
     border-radius:1rem 0 1rem 0;
+    transition:all .25s linear;
 }
 
 .page-footer li:hover a{
@@ -578,4 +590,5 @@ main .container {
 
 .page-footer li:hover{
     text-shadow: unset;
+    transform: translate(10px);
 }
