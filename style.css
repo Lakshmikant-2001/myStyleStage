@@ -20,13 +20,29 @@ body a:hover {
     text-decoration: underline dashed;
 }
 
+:root{
+    --bg-color:#000;
+    --primary-text-color:#ddd;
+    --primary-color:#ff60b5;
+    --secondary-color:#f282d9;
+    --text-fill-color:#e2d5dc;
+    --para-size:1.8rem;
+    --tiny-size:1.5rem;
+    --h1-size:10rem;
+    --h2-size:3.5rem;
+    --h3-size:2.1rem;
+    --primary-font:'Josefin Sans', sans-serif;
+    --heading-font:'Bangers',cursive;
+    --line-height:3rem;
+}
+
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    overflow-x: hidden;
-    background-color: #000;
-    color: #ddd;
-    font-size: 1.7rem;
+    background-color:var(--bg-color);
+    color: var(--primary-text-color);
+    font-size: var(--para-size);
+    font-family: var(--primary-font);
     font-weight: bold;
+    overflow-x: hidden;
 }
 
 /* --scroll bar start-- */
@@ -48,7 +64,7 @@ body {
 }
 
 ::selection {
-    background-color: #ff60b5;
+    background-color: var(--primary-color);
 }
 
 a::selection {
@@ -64,11 +80,9 @@ a::selection {
 }
 
 header {
-    background-color: #000;
-    color: #fff;
     display: flex;
     height: 100vh;
-    padding:5rem 0;
+    padding: 5rem 0;
     justify-content: center;
     align-items: center;
     user-select: none;
@@ -117,7 +131,6 @@ header>.container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
     animation: show .5s .5s 1 forwards ease-in-out;
     transform: scale(0);
 }
@@ -134,16 +147,17 @@ header>.container {
 header>.container h1 {
     width: 100%;
     text-align: center;
-    font-size: 10rem;
+    font-size: var(--h1-size);
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #e2d5dc;
+    -webkit-text-fill-color: var(--text-fill-color);
     -webkit-text-stroke: 15px transparent;
     margin-bottom: 4rem;
     text-shadow: 2px 2px 5px #333;
 }
 
 header>.container h2 {
+    font-size:2.5rem;
     letter-spacing: .5rem;
     text-align: center;
     width: 65%;
@@ -171,7 +185,7 @@ header>.container h2:hover {
 
 header>.container p {
     text-align: center;
-    margin:0 2rem;
+    margin: 0 2rem;
     padding: 0.5rem 1rem;
     border-left: 5px solid #f282d9;
     letter-spacing: .3rem;
@@ -185,7 +199,7 @@ header>.container p a {
 
 header>.container>a {
     margin-top: 3rem;
-    box-shadow: 3px 2px 10px #f282d9, -2px -3px 10px #f282d9;
+    box-shadow: 3px 2px 10px var(--secondary-color), -2px -3px 10px var(--secondary-color);
     padding: .5rem 1rem;
     border-radius: 1rem 0;
     display: flex;
@@ -210,11 +224,10 @@ header>.container a path {
 /* --nav bar start-- */
 
 nav {
-    font-family: 'Bangers', cursive;
-    font-size: 1.5rem;
+    font-family: var(--heading-font);
+    font-size: var(--tiny-size);
     background-color: #111;
     box-shadow: 0px -8px 20px #f282d990;
-    color: #ddd;
     width: 800px;
     height: 60px;
     position: sticky;
@@ -239,11 +252,11 @@ nav ul li {
 }
 
 nav ul li:not(:last-child) {
-    border-right: 4px solid #ff60b5;
+    border-right: 4px solid var(--primary-color);
 }
 
 nav ul li:hover {
-    box-shadow: 0px -5px 10px #f282d9;
+    box-shadow: 0px -5px 10px var(--secondary-color);
     padding: 1rem 2rem;
 }
 
@@ -256,17 +269,17 @@ nav a:hover {
 main {
     width: 80%;
     margin: auto;
-    line-height: 3rem;
+    line-height: var(--line-height);
     position: relative;
 }
 
 main h2, #styles .container h2 {
     padding-left: .5rem;
-    font-size: 3.5rem;
-    font-family: 'Bangers', cursive;
+    font-size: var(--h2-size);
+    font-family: var(--heading-font);
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #e2d5dc;
+    -webkit-text-fill-color: var(--text-fill-color);
     -webkit-text-stroke: 5px transparent;
     text-shadow: 2px 2px 5px #333;
     margin: 2rem 0;
@@ -294,7 +307,7 @@ main h2::after, #styles .container h2:after {
 }
 
 main a {
-    color: #f282d9;
+    color: var(--secondary-color);
 }
 
 main p {
@@ -316,11 +329,11 @@ main .container {
     padding: .5rem 2rem .5rem 1rem;
     margin-bottom: 1rem;
     display: block;
-    border-bottom: 5px solid #ff3886;
-    font-family: "Bangers";
+    border-bottom: 5px solid var(--primary-color);
+    font-family: var(--heading-font);
     color: #888;
     letter-spacing: .2rem;
-    font-size: 2rem;
+    font-size: var(--h3-size);
     animation: glow 3s infinite ease-in-out;
 }
 
@@ -350,9 +363,13 @@ main .container {
     margin: 2rem 0 5rem;
 }
 
+#about :last-child li{
+    font-size: var(--tiny-size);
+} 
+
 #about :last-child li, .link-guidelines, #files a {
-    border: 3px solid #ff60b5;
-    margin: 1rem 0.7rem;
+    border: 3px solid var(--primary-color);
+    margin: 1.2rem 0.8rem;
     padding: .5rem 1.2rem;
     border-radius: 1rem 0 1rem 0;
     cursor: default;
@@ -361,8 +378,8 @@ main .container {
 
 #about :last-child li:hover, .link-guidelines:hover, #files a:hover, .page-footer li:hover {
     border-radius: 2rem 0 1rem 0;
-    box-shadow: 5px 4px 1px #ff60b5;
-    text-shadow: 1px 1px 10px #ddd;
+    box-shadow: 5px 4px 1px var(--primary-color);
+    text-shadow: 1px 1px 10px var(--primary-text-color);
 }
 
 #guidelines h3 {
@@ -382,7 +399,7 @@ main .container {
 
 .link-guidelines {
     padding: 1rem;
-    color: #ddd;
+    color: var(--primary-text-color);
 }
 
 .link-guidelines:hover {
@@ -395,7 +412,7 @@ main .container {
     border-left: 5px solid #ff60b5;
     box-shadow: -3px 4px 7px #ffffff50;
     padding: 1rem 1.2rem;
-    font-size: 2rem;
+    font-size: var(--h3-size);
     border-radius: .5rem;
 }
 
@@ -405,7 +422,7 @@ main .container {
 
 #contribute li::before {
     content: '\2B16';
-    color: #ff60b5;
+    color: var(--primary-color);
     margin-right: 1rem;
     transform: rotate(3deg);
 }
@@ -426,12 +443,12 @@ main .container {
 
 #files .container h3::before {
     content: '\1F5C1';
-    color: #ff60b5;
+    color: var(--primary-color);
     margin-right: 1rem;
 }
 
 #files a {
-    color: #ddd;
+    color: var(--primary-text-color);
     padding: 1rem 1rem;
     text-decoration: none;
     margin: 0 2rem 4rem;
@@ -439,10 +456,11 @@ main .container {
 
 .profile .container, #styles li {
     margin: 8rem auto;
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    border: 5px solid #ff60b5;
+    border: 5px solid var(--primary-color);
     padding: 2rem;
     position: relative;
 }
@@ -454,9 +472,9 @@ main .container {
     position: absolute;
     top: -15px;
     left: -25px;
-    background-color: #000;
+    background-color: var(--bg-color);
     overflow: hidden;
-    border: 5px solid #ff60b5;
+    border: 5px solid var(--primary-color);
     border-radius: 50%;
 }
 
@@ -464,11 +482,11 @@ main .container {
     background-color: #fff;
     border: unset;
     transform: scale(.5);
-    animation: slide 3s infinite linear;
-    border-bottom: 15px solid #ff60b5;
+    border-bottom: 15px solid var(--primary-color);
+    animation: rotate 3s infinite linear;
 }
 
-@keyframes slide {
+@keyframes rotate {
     0% {
         transform: rotate(0turn) scale(.5);
     }
@@ -484,7 +502,7 @@ main .container {
 .profile .container h4 {
     font-size: 2.5rem;
     padding-bottom: .8rem;
-    border-bottom: 4px solid #ff60b5;
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .profile .container li {
@@ -492,7 +510,7 @@ main .container {
 }
 
 .profile .container a {
-    color: #f282d9;
+    color: var(--secondary-color);
 }
 
 #styles .container {
@@ -529,14 +547,14 @@ main .container {
 }
 
 #styles li>span a {
-    color: #f282d9;
+    color: var(--secondary-color);
     margin-bottom: 2rem;
 }
 
 .link-allstyles {
     margin: 3rem auto;
     padding: 1rem 1.5rem;
-    border-left: 6px solid #ff60b5;
+    border-left: 6px solid var(--primary-color);
     border-radius: .6rem;
     box-shadow: 3px 3px 10px #ffffff50, 2px 3px 10px #ff60b550;
     transition: all .3s linear;
@@ -549,17 +567,16 @@ main .container {
 }
 
 .page-footer {
-    border-top: 1px solid #f282d9;
+    border-top: 1px solid var(--secondary-color);
     margin-top: 8rem;
     line-height: 3rem;
 }
 
 .page-footer .container {
-    width: 80%;
-    margin:5rem auto;
+    width: 90%;
+    margin: 5rem auto;
     display: flex;
     flex-direction: column;
-    font-size: 1.8rem;
 }
 
 .page-footer .container p {
@@ -567,7 +584,7 @@ main .container {
 }
 
 .page-footer .container a {
-    color: #f282d9;
+    color: var(--secondary-color);
 }
 
 .page-footer svg {
@@ -576,12 +593,12 @@ main .container {
 }
 
 .page-footer path {
-    fill: #f282d9;
+    fill: var(--secondary-color);
 }
 
 .page-footer ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 2rem 0 4rem;
 }
@@ -589,10 +606,10 @@ main .container {
 .page-footer li {
     margin: 2rem 2rem;
     padding: 1.2rem 3rem;
-    border: 3px solid #f282d9;
+    border: 3px solid var(--secondary-color);
     border-radius: 1rem 0 1rem 0;
     transition: all .25s linear;
-    font: bold 1.5rem "Bangers", cursive;
+    font: bold var(--tiny-size) var(--heading-font);
     letter-spacing: .3rem;
 }
 
@@ -639,6 +656,9 @@ main .container {
 }
 
 @media (max-width:800px) {
+    header>.container h1 {
+        font-size: 6rem;
+    }
     nav {
         position: unset;
         transform: unset;
@@ -678,12 +698,17 @@ main .container {
         padding: .2rem .8rem;
     }
     .link-guidelines, #files a {
-        padding:.5rem 1rem;
+        padding: .5rem 1rem;
     }
     #contribute ol {
-        margin:3rem 0.5re;
+        margin: 3rem 0.5rem;
     }
-    main,.page-footer{
+    main, .page-footer {
         line-height: 2.5rem;
+    }
+    .page-footer li {
+        font-size: 1.3rem;
+        padding: 1rem 1.5rem;
+        margin: 1.5rem;
     }
 }
