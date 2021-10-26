@@ -20,24 +20,25 @@ body a:hover {
     text-decoration: underline dashed;
 }
 
-:root{
-    --bg-color:#000;
-    --primary-text-color:#ddd;
-    --primary-color:#ff60b5;
-    --secondary-color:#f282d9;
-    --text-fill-color:#e2d5dc;
-    --para-size:1.8rem;
-    --tiny-size:1.5rem;
-    --h1-size:10rem;
-    --h2-size:3.5rem;
-    --h3-size:2.1rem;
-    --primary-font:'Josefin Sans', sans-serif;
-    --heading-font:'Bangers',cursive;
-    --line-height:3rem;
+:root {
+    --bg-color: #000;
+    --primary-text-color: #ddd;
+    --primary-color: #ff60b5;
+    --secondary-color: #f282d9;
+    --text-fill-color: #e2d5dc;
+    --para-size: 1.8rem;
+    --tiny-size: 1.6rem;
+    --h1-size: 10rem;
+    --h2-size: 3.5rem;
+    --h3-size: 2.5rem;
+    --primary-font: 'Josefin Sans', sans-serif;
+    --heading-font: 'Bangers', cursive;
+    --line-height: 3rem;
+    --letter-spacing:.5rem;
 }
 
 body {
-    background-color:var(--bg-color);
+    background-color: var(--bg-color);
     color: var(--primary-text-color);
     font-size: var(--para-size);
     font-family: var(--primary-font);
@@ -95,7 +96,7 @@ header::after, header::before {
     height: 100vh;
     border-radius: 1rem;
     background-image: linear-gradient(to right top, #ff0000, #ff014e, #ff3886, #ff60b5, #f282d9);
-    overflow-y: hidden;
+    overflow-x: hidden;
     animation: open-aft 1.2s 1 forwards ease-in-out;
 }
 
@@ -157,8 +158,8 @@ header>.container h1 {
 }
 
 header>.container h2 {
-    font-size:2.5rem;
-    letter-spacing: .5rem;
+    font-size: var(--h3-size);
+    letter-spacing: var(--letter-spacing);
     text-align: center;
     width: 65%;
     text-shadow: 2px 5px 20px #ffffff99;
@@ -172,14 +173,14 @@ header>.container h2:hover {
 @keyframes expand {
     0%, 100% {
         text-shadow: 2px 5px 20px #ffffff99;
-        letter-spacing: .5rem;
+        letter-spacing: var(--letter-spacing);
     }
     35% {
         text-shadow: 4px 5px 50px #ffffff;
-        letter-spacing: .6rem;
+        letter-spacing: calc(var(--letter-spacing) * 1.5);
     }
     75% {
-        letter-spacing: .4rem;
+        letter-spacing: calc(var(--letter-spacing) * .5);
     }
 }
 
@@ -188,8 +189,8 @@ header>.container p {
     margin: 0 2rem;
     padding: 0.5rem 1rem;
     border-left: 5px solid #f282d9;
-    letter-spacing: .3rem;
-    line-height: 3rem;
+    letter-spacing:  calc(var(--letter-spacing) * .5);
+    line-height: var(--line-height);
 }
 
 header>.container p a {
@@ -266,10 +267,13 @@ nav a:hover {
 
 /* --nav bar end-- */
 
+main, .page-footer {
+    line-height: var(--line-height);
+}
+
 main {
     width: 80%;
     margin: auto;
-    line-height: var(--line-height);
     position: relative;
 }
 
@@ -292,7 +296,7 @@ main h2, #styles .container h2 {
 
 main h2:hover, #styles .container h2:hover {
     transform: rotate(1deg);
-    letter-spacing: .5rem;
+    letter-spacing: var(--letter-spacing);
 }
 
 main h2::after, #styles .container h2:after {
@@ -332,7 +336,7 @@ main .container {
     border-bottom: 5px solid var(--primary-color);
     font-family: var(--heading-font);
     color: #888;
-    letter-spacing: .2rem;
+    letter-spacing:  calc(var(--letter-spacing) * .25);
     font-size: var(--h3-size);
     animation: glow 3s infinite ease-in-out;
 }
@@ -360,12 +364,12 @@ main .container {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    margin: 2rem 0 5rem;
+    margin: 2rem 0 3.5rem;
 }
 
-#about :last-child li{
+#about :last-child li {
     font-size: var(--tiny-size);
-} 
+}
 
 #about :last-child li, .link-guidelines, #files a {
     border: 3px solid var(--primary-color);
@@ -390,7 +394,7 @@ main .container {
 
 #guidelines p:nth-of-type(2) {
     width: 90%;
-    max-width: 600px;
+    max-width: 900px;
     margin: 1rem 0 3rem;
     padding: 2rem;
     box-shadow: 3px 5px 20px #725f5f50, -2px -2px 10px #ffffff50;
@@ -569,7 +573,6 @@ main .container {
 .page-footer {
     border-top: 1px solid var(--secondary-color);
     margin-top: 8rem;
-    line-height: 3rem;
 }
 
 .page-footer .container {
@@ -610,7 +613,7 @@ main .container {
     border-radius: 1rem 0 1rem 0;
     transition: all .25s linear;
     font: bold var(--tiny-size) var(--heading-font);
-    letter-spacing: .3rem;
+    letter-spacing: calc(var(--letter-spacing) * .3);
 }
 
 .page-footer li:hover a {
@@ -623,11 +626,8 @@ main .container {
 }
 
 @media (max-width:1400px) {
-    header>.container h1 {
-        font-size: 9rem;
-    }
-    header h2 {
-        font-size: 2rem;
+    :root {
+        --h1-size: 9rem;
     }
     header::before, header::after {
         height: 90vh;
@@ -636,28 +636,35 @@ main .container {
 }
 
 @media (max-width:1100px) {
+    :root {
+        --h1-size: 8.5rem;
+    }
     header::before, header::after {
         height: 85vh;
         width: 85vh;
     }
-    header>.container h1 {
-        font-size: 8rem;
-    }
 }
 
 @media (max-width:950px) {
+    :root {
+        --h1-size: 8rem;
+        --h2-size: 3.2rem;
+    }
     header::before, header::after {
         height: 80vh;
         width: 80vh;
     }
-    header>.container h1 {
-        font-size: 7rem;
-    }
 }
 
 @media (max-width:800px) {
-    header>.container h1 {
-        font-size: 6rem;
+    :root {
+        --para-size: 1.7rem;
+        --tiny-size: 1.5rem;
+        --h1-size: 7.75rem;
+        --h2-size: 3.25rem;
+        --h3-size: 2.25rem;
+        --line-height: 2.5rem;
+        --letter-spacing:.13rem;
     }
     nav {
         position: unset;
@@ -691,9 +698,6 @@ main .container {
         box-shadow: 0px -5px 10px #f282d960, 0px 5px 10px #f282d950;
         padding: 1.2rem 3rem !important;
     }
-    #about :last-child ul {
-        font-size: 1.5rem;
-    }
     #about :last-child li .link-guidelines, #files a {
         padding: .2rem .8rem;
     }
@@ -703,12 +707,92 @@ main .container {
     #contribute ol {
         margin: 3rem 0.5rem;
     }
-    main, .page-footer {
-        line-height: 2.5rem;
-    }
     .page-footer li {
-        font-size: 1.3rem;
         padding: 1rem 1.5rem;
         margin: 1.5rem;
+    }
+    @keyframes open-aft {
+        0% {
+            right: 5%;
+            transform: scale(.75);
+        }
+        100% {
+            right: 200%;
+            transform: rotate(.87turn) scale(.25);
+            width: 0;
+        }
+    }
+    @keyframes open-bef {
+        0% {
+            left: 5%;
+            transform: scale(.75);
+        }
+        100% {
+            left: -100%;
+            transform: rotate(.87turn) scale(.25);
+            width: 0;
+        }
+    }
+    header>.container h2 {
+        width: 95%;
+    }
+}
+
+@media (max-width:600px) {
+    :root {
+        --para-size: 1.5rem;
+        --tiny-size: 1.3rem;
+        --h1-size: 6.15rem;
+        --h2-size: 2.75rem;
+        --h3-size: 2rem;
+        --line-height: 2.2rem;
+        --letter-spacing:.075rem;
+    }
+}
+
+@media (max-width:500px) {
+    :root {
+        --para-size: 1.45rem;
+        --tiny-size: 1.25rem;
+        --h1-size: 5.65rem;
+        --h2-size: 2.5rem;
+        --h3-size: 1.9rem;
+        --line-height: 2.1rem;
+    }
+}
+
+@media (max-width:450px) {
+    :root {
+        --h1-size: 5.2rem;
+        --h2-size: 2.45rem;
+        --h3-size: 1.85rem;
+    }
+}
+
+@media (max-width:400px) {
+    :root {
+        --h1-size: 4.6rem;
+        --h2-size: 2.4rem;
+        --h3-size: 1.8rem;
+        --letter-spacing:.05rem;
+    }
+}
+
+@media (max-width:360px) {
+    :root {
+        --h1-size: 4rem;
+        --h2-size: 2.35rem;
+        --h3-size: 1.75rem;
+    }
+}
+
+@media (max-width:320px) {
+    :root {
+        --para-size: 1.4rem;
+        --tiny-size: 1.3rem;
+        --h1-size: 3.55rem;
+        --h2-size: 2.25rem;
+        --h3-size: 1.7rem;
+        --line-height: 2.1rem;
     }
 }
