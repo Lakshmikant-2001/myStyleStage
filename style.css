@@ -49,7 +49,6 @@ body {
 }
 
 /* --scroll bar start-- */
-
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -73,7 +72,6 @@ body {
 a::selection {
     color: #dddddd99;
 }
-
 /* --scroll bar end-- */
 
 .skip-link {
@@ -92,6 +90,7 @@ a::selection {
     text-decoration: none;
 }
 
+/* --header start-- */
 header {
     display: flex;
     height: 100vh;
@@ -116,6 +115,7 @@ header::before {
     animation: open-bef 1.2s 1 forwards ease-in-out;
 }
 
+/* --opening animation-- */
 @keyframes open-aft {
     0% {
         right: 5%;
@@ -235,9 +235,9 @@ header>.container a svg {
 header>.container a path {
     fill: #f282d9;
 }
+/* --header start-- */
 
 /* --nav bar start-- */
-
 nav {
     font-family: var(--heading-font);
     font-size: var(--tiny-size);
@@ -278,9 +278,9 @@ nav ul li:hover, nav ul li:focus {
 nav a:hover, nav a:focus {
     text-decoration: unset;
 }
-
 /* --nav bar end-- */
 
+/* --main start-- */
 main, .page-footer {
     line-height: var(--line-height);
 }
@@ -291,6 +291,7 @@ main {
     position: relative;
 }
 
+/* --stroke text style-- */
 main h2, #styles .container h2 {
     padding-left: .5rem;
     font-size: var(--h2-size);
@@ -389,8 +390,7 @@ main .container {
     font-size: var(--tiny-size);
 }
 
-/* --li box style start-- */
-
+/* -- box style -- */
 #about :last-child li, .link-guidelines, #files a {
     border: 3px solid var(--primary-color);
     margin: 1.2rem 0.8rem;
@@ -406,8 +406,6 @@ main .container {
     text-shadow: 1px 1px 10px var(--primary-text-color);
     outline: unset;
 }
-
-/* --li box style end-- */
 
 #guidelines h3 {
     color: #ff60b5;
@@ -483,6 +481,7 @@ main .container {
     text-decoration: none;
     margin: 0 2rem 4rem;
 }
+/* --main end-- */
 
 .profile .container, #styles li {
     margin: 6rem auto;
@@ -495,6 +494,7 @@ main .container {
     position: relative;
 }
 
+/* --pseudo circle style-- */
 .profile .container::before, .profile .container::after, #styles li::after, #styles li::before {
     content: '';
     width: 50px;
@@ -516,6 +516,7 @@ main .container {
     animation: rotate 3s infinite linear;
 }
 
+/* --rotating circle animation-- */
 @keyframes rotate {
     0% {
         transform: rotate(0turn) scale(.5);
@@ -598,6 +599,7 @@ main .container {
     outline: unset;
 }
 
+/* --footer start-- */
 .page-footer {
     border-top: 1px solid var(--secondary-color);
     margin-top: 8rem;
@@ -657,7 +659,9 @@ main .container {
     text-shadow: unset;
     transform: translate(10px);
 }
+/* --footer style end-- */
 
+/* --media queries start-- */
 @media (max-width:1400px) {
     :root {
         --h1-size: 9rem;
@@ -938,7 +942,9 @@ main .container {
         --line-height: 1.9rem;
     }
 }
+/* --media queries start-- */
 
+/* --reduce animations for prefered users-- */
 @media (prefers-reduced-motion:reduce) {
     *, *::before, *::after {
         -webkit-animation-duration: 0.01ms !important;
