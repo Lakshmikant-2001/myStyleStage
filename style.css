@@ -16,7 +16,7 @@ body li {
     list-style: none;
 }
 
-body a:hover {
+body a:hover, body a:focus {
     text-decoration: underline dashed;
 }
 
@@ -81,6 +81,15 @@ a::selection {
     color: #fff;
     left: 0;
     transform: translate(-200%);
+    font-size: var(--tiny-size)
+}
+
+.skip-link:focus {
+    transform: unset;
+}
+
+.skip-link:hover {
+    text-decoration: none;
 }
 
 header {
@@ -212,9 +221,10 @@ header>.container>a {
     transition: transform .5s ease-in-out;
 }
 
-header>.container>a:hover {
+header>.container>a:hover, header>.container>a:focus {
     transform: scale(1.03);
     text-decoration: unset;
+    outline: unset;
 }
 
 header>.container a svg {
@@ -260,12 +270,12 @@ nav ul li:not(:last-child) {
     border-right: 4px solid var(--primary-color);
 }
 
-nav ul li:hover {
+nav ul li:hover, nav ul li:focus {
     box-shadow: 0px -5px 10px var(--secondary-color);
     padding: 1rem 2rem;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
     text-decoration: unset;
 }
 
@@ -390,10 +400,11 @@ main .container {
     transition: all .3s linear;
 }
 
-#about :last-child li:hover, .link-guidelines:hover, #files a:hover, .page-footer li:hover {
+#about :last-child li:hover, .link-guidelines:hover, #files a:hover, .page-footer li:hover, #about :last-child li:focus, .link-guidelines:focus, #files a:focus, .page-footer li:focus {
     border-radius: 2rem 0 1rem 0;
     box-shadow: 5px 4px 1px var(--primary-color);
     text-shadow: 1px 1px 10px var(--primary-text-color);
+    outline: unset;
 }
 
 /* --li box style end-- */
@@ -418,7 +429,7 @@ main .container {
     color: var(--primary-text-color);
 }
 
-.link-guidelines:hover {
+.link-guidelines:hover, .link-guidelines:focus {
     text-decoration: unset;
 }
 
@@ -580,10 +591,11 @@ main .container {
     transition: all .3s linear;
 }
 
-.link-allstyles:hover {
+.link-allstyles:hover, .link-allstyles:focus {
     text-decoration: none;
     transform: scale(1.05);
     box-shadow: 3px 3px 5px #ffffff50, 2px 3px 20px #ff60b590;
+    outline: unset;
 }
 
 .page-footer {
@@ -637,11 +649,11 @@ main .container {
     letter-spacing: calc(var(--letter-spacing) * .3);
 }
 
-.page-footer li:hover a {
+.page-footer li:hover a, .page-footer li:focus a {
     text-decoration: none;
 }
 
-.page-footer li:hover {
+.page-footer li:hover, .page-footer li:focus {
     text-shadow: unset;
     transform: translate(10px);
 }
@@ -736,7 +748,7 @@ main .container {
     nav li {
         flex-grow: none;
         border: unset;
-        border-bottom:1px solid #ffffff10;
+        border-bottom: 1px solid #ffffff10;
         padding: 1.2rem 2rem !important;
     }
     nav ul li:hover {
