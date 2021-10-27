@@ -732,20 +732,14 @@ main .container {
         margin: 2rem auto;
         width: 70%;
         min-width: 320px;
-        height: 380px;
-        overflow: auto;
+        height: unset;
+        overflow: hidden;
         box-shadow: 0px 2px 20px #f282d950, 0px -2px 20px #f282d950;
         user-select: none;
     }
-    nav::-webkit-scrollbar {
-        width: 5px;
-    }
-    nav::-webkit-scrollbar-thumb {
-        border-radius: 2rem;
-    }
     nav ul {
         width: 100%;
-        padding: 1rem 0;
+        height: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -754,6 +748,10 @@ main .container {
         border: unset;
         border-bottom: 1px solid #ffffff10;
         padding: 1.2rem 2rem !important;
+        position:relative;
+    }
+    nav ul li:not(:last-child) {
+        border-right: unset;
     }
     nav ul li:hover {
         box-shadow: 0px -5px 10px #f282d960, 0px 5px 10px #f282d950;
