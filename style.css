@@ -79,8 +79,8 @@ a::selection {
 .skip-link {
     position: absolute;
     color: #fff;
-    left:0;
-    transform:translate(-200%);
+    left: 0;
+    transform: translate(-200%);
 }
 
 header {
@@ -167,6 +167,7 @@ header>.container h2 {
     width: 65%;
     text-shadow: 2px 5px 20px #ffffff99;
     margin-bottom: 3rem;
+    height: 100px;
 }
 
 header>.container h2:hover {
@@ -180,10 +181,10 @@ header>.container h2:hover {
     }
     35% {
         text-shadow: 4px 5px 50px #ffffff;
-        letter-spacing: calc(var(--letter-spacing) * 1.5);
+        letter-spacing: calc(var(--letter-spacing) * 1.2);
     }
     75% {
-        letter-spacing: calc(var(--letter-spacing) * .5);
+        letter-spacing: calc(var(--letter-spacing) * .2);
     }
 }
 
@@ -192,7 +193,7 @@ header>.container p {
     margin: 0 2rem;
     padding: 0.5rem 1rem;
     border-left: 5px solid #f282d9;
-    letter-spacing:  calc(var(--letter-spacing) * .5);
+    letter-spacing: calc(var(--letter-spacing) * .5);
     line-height: var(--line-height);
 }
 
@@ -232,13 +233,13 @@ nav {
     font-size: var(--tiny-size);
     background-color: #111;
     box-shadow: 0px -8px 20px #f282d990;
-    width: 800px;
+    width: 750px;
     height: 60px;
     position: sticky;
     top: 0;
     left: 100%;
     transform-origin: 100% 0;
-    transform: rotate(-.25turn) translate(-100px, -100%);
+    transform: rotate(-.25turn) translate(-5px, -100%);
     z-index: 1;
 }
 
@@ -296,6 +297,9 @@ main h2, #styles .container h2 {
     cursor: default;
     transition: transform .5s linear, letter-spacing .5s linear;
     line-height: 3rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 main h2:hover, #styles .container h2:hover {
@@ -376,6 +380,7 @@ main .container {
 }
 
 /* --li box style start-- */
+
 #about :last-child li, .link-guidelines, #files a {
     border: 3px solid var(--primary-color);
     margin: 1.2rem 0.8rem;
@@ -390,6 +395,7 @@ main .container {
     box-shadow: 5px 4px 1px var(--primary-color);
     text-shadow: 1px 1px 10px var(--primary-text-color);
 }
+
 /* --li box style end-- */
 
 #guidelines h3 {
@@ -419,12 +425,12 @@ main .container {
 #contribute :nth-child(2) h3 {
     text-transform: uppercase;
     border-left: 5px solid #ff60b5;
-    box-shadow: -3px 4px 7px #ffffff50,0 -1px 5px #ffffff50;
+    box-shadow: -3px 4px 7px #ffffff50, 0 -1px 5px #ffffff50;
     padding: 1rem 1.2rem;
     font-size: var(--h3-size);
     border-radius: .5rem;
     line-height: 2.5rem;
-    display:block;
+    display: block;
     width: 100%;
     max-width: 500px;
 }
@@ -592,7 +598,8 @@ main .container {
     display: flex;
     flex-direction: column;
 }
-.page-footer p:first-of-type{
+
+.page-footer p:first-of-type {
     text-align: center;
 }
 
@@ -605,7 +612,7 @@ main .container {
 }
 
 .page-footer svg {
-    width: 25px;
+    width: 22px;
     margin-right: .1rem;
 }
 
@@ -657,6 +664,28 @@ main .container {
         height: 85vh;
         width: 85vh;
     }
+    @keyframes open-aft {
+        0% {
+            right: 5%;
+            transform: scale(.75);
+        }
+        100% {
+            right: 200%;
+            transform: rotate(.87turn) scale(.25);
+            width: 0;
+        }
+    }
+    @keyframes open-bef {
+        0% {
+            left: 5%;
+            transform: scale(.75);
+        }
+        100% {
+            left: -100%;
+            transform: rotate(.87turn) scale(.25);
+            width: 0;
+        }
+    }
 }
 
 @media (max-width:950px) {
@@ -687,7 +716,7 @@ main .container {
         margin: 2rem auto;
         width: 70%;
         min-width: 320px;
-        height: 250px;
+        height: 380px;
         overflow: auto;
         box-shadow: 0px 2px 20px #f282d950, 0px -2px 20px #f282d950;
         user-select: none;
@@ -706,7 +735,8 @@ main .container {
     }
     nav li {
         flex-grow: none;
-        border: none !important;
+        border: unset;
+        border-bottom:1px solid #ffffff10;
         padding: 1.2rem 2rem !important;
     }
     nav ul li:hover {
@@ -722,28 +752,6 @@ main .container {
     .page-footer svg {
         width: 20px;
     }
-    @keyframes open-aft {
-        0% {
-            right: 5%;
-            transform: scale(.75);
-        }
-        100% {
-            right: 200%;
-            transform: rotate(.87turn) scale(.25);
-            width: 0;
-        }
-    }
-    @keyframes open-bef {
-        0% {
-            left: 5%;
-            transform: scale(.75);
-        }
-        100% {
-            left: -100%;
-            transform: rotate(.87turn) scale(.25);
-            width: 0;
-        }
-    }
     header>.container h2 {
         width: 95%;
     }
@@ -755,10 +763,10 @@ main .container {
     }
     .profile .container {
         margin: 0 auto 4rem;
-        padding:1.5rem;
+        padding: 1.5rem;
     }
     .profile .container li {
-        margin:1.5rem 0;
+        margin: 1.5rem 0;
     }
     #files a {
         margin: 0 1rem 3rem;
@@ -783,14 +791,17 @@ main .container {
     #files .container h3::before {
         display: none;
     }
-    #styles .container{
+    #styles .container {
         margin-bottom: 3rem;
     }
     #guidelines p:nth-of-type(2) {
-        padding:1.5rem;
+        padding: 1.5rem;
     }
     header>.container h1 {
         -webkit-text-stroke: 12px transparent;
+    }
+    main h2, #styles .container h2 {
+        white-space: unset;
     }
 }
 
@@ -810,7 +821,7 @@ main .container {
     }
     #guidelines p:nth-of-type(2) {
         width: 100%;
-        padding:1.5rem 1rem;
+        padding: 1.5rem 1rem;
     }
     header>.container h1 {
         -webkit-text-stroke: 9px transparent;
@@ -824,8 +835,8 @@ main .container {
     .page-footer ul {
         margin: 1.3rem 0;
     }
-    .page-footer li{
-        margin:1rem 1.5rem;
+    .page-footer li {
+        margin: 1rem 1.5rem;
     }
     .page-footer .container {
         margin: 3rem 0;
@@ -849,11 +860,11 @@ main .container {
     #styles li>span a {
         margin-bottom: 1.3rem;
     }
-    #styles .container{
+    #styles .container {
         margin-bottom: 2rem;
     }
     .profile .container li {
-        margin:1.2rem 0;
+        margin: 1.2rem 0;
     }
 }
 
@@ -867,16 +878,16 @@ main .container {
         --line-height: 2rem;
     }
     #files .container {
-        margin:0;
+        margin: 0;
     }
     .page-footer ul {
         margin: 1rem 0;
     }
-    .page-footer li{
-        margin:.8rem 1.5rem;
+    .page-footer li {
+        margin: .8rem 1.5rem;
     }
     .profile .container li {
-        margin:1rem 0;
+        margin: 1rem 0;
     }
 }
 
@@ -913,5 +924,16 @@ main .container {
         --h2-size: 2.25rem;
         --h3-size: 1.7rem;
         --line-height: 1.9rem;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    *, *::before, *::after {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+        -webkit-transition-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 }
