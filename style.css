@@ -28,6 +28,7 @@ body a:hover, body a:focus {
     --text-fill-color: #e2d5dc;
     --para-size: 1.8rem;
     --tiny-size: 1.6rem;
+    --nav-font-size:1.4rem;
     --h1-size: 10rem;
     --h2-size: 3.5rem;
     --h3-size: 2.5rem;
@@ -240,11 +241,11 @@ header>.container a path {
 /* --nav bar start-- */
 nav {
     font-family: var(--heading-font);
-    font-size: var(--tiny-size);
+    font-size: var(--nav-font-size);
     background-color: #111;
     box-shadow: 0px -8px 20px #f282d990;
-    width: 750px;
-    height: 60px;
+    width: 700px;
+    height: 55px;
     position: sticky;
     top: 0;
     left: 100%;
@@ -736,6 +737,7 @@ main .container {
         overflow: hidden;
         box-shadow: 0px 2px 20px #f282d950, 0px -2px 20px #f282d950;
         user-select: none;
+        font-size:var(--tiny-size);
     }
     nav ul {
         width: 100%;
