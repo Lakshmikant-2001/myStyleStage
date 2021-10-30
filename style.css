@@ -595,11 +595,15 @@ main .container {
 
 .link-allstyles:hover, .link-allstyles:focus {
     text-decoration: none;
-    transform: scale(1.05);
-    box-shadow: 3px 3px 5px #ffffff50, 2px 3px 20px #ff60b590;
-    outline: unset;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 7px #ffffff50, 5px -3px 20px #ff60b590;
+    border-radius:1.5rem;
+    outline:unset;
 }
 
+.link-allstyles:focus {
+    text-decoration: underline dashed;
+}
 /* --footer start-- */
 .page-footer {
     border-top: 1px solid var(--secondary-color);
