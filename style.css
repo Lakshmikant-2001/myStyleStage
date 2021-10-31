@@ -223,9 +223,13 @@ header>.container>a {
 }
 
 header>.container>a:hover, header>.container>a:focus {
-    transform: scale(1.03);
+    transform: scale(1.1);
     text-decoration: unset;
+}
+
+header>.container>a:focus{
     outline: unset;
+    text-decoration: underline dashed;
 }
 
 header>.container a svg {
